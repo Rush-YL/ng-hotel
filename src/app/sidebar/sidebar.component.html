@@ -1,0 +1,34 @@
+<div *ngIf="showStatus" class="aside_bar_cover" (click)="toggleSidebar()"></div>
+<div *ngIf="showStatus" class="aside_bar">
+  <div class="aside_contents">
+    <p class="hide_aside">
+      <a href="javascript:void(0);">
+        <i (click)="toggleSidebar()" class="icon-navicon"></i>
+      </a>
+    </p>
+    <div class="user_info">
+      <a href="javascript:void(0);">
+        <img src="{{userinfo.userlogo}}" alt="">
+      </a>
+      <div>
+        <h3>工号{{userinfo.usernumber}}</h3>
+        <p>当前班次：{{userinfo.userworktime}}</p>
+      </div>
+    </div>
+    <div class="fast_track">
+      <ul>
+        <li *ngFor="let fasttrack of fasttracks"  (click)="quickNav(fasttrack)">
+          <a>
+            <i class="{{fasttrack.icontype}}"></i>
+            <span>{{fasttrack.trackname}}</span>
+            <em class="{{fasttrack.iconentry}}"></em>
+          </a>
+        </li>
+      </ul>
+    </div>
+    <div class="log_out">
+      <i class="icon-power"></i>
+      <span>退出</span>
+    </div>
+  </div>
+</div>

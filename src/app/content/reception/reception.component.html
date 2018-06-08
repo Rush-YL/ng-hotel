@@ -1,0 +1,140 @@
+<div class="reception">
+  <header>
+    <a href="javascript:void(0);" (click)="backToMain()">
+      <i class="icon-angle-left"></i>
+    </a>
+    <span>接待</span>
+  </header>
+  <section>
+    <div class="reception_div">
+      <p (click)="goToNewreserve()">
+        <span>散客步入</span>
+        <i class="icon-angle-right"></i>
+      </p>
+      <p (click)="seeReceptionList()">
+        <span>接待列表</span>
+        <i class="icon-angle-right"></i>
+      </p>
+    </div>
+  </section>
+</div>
+<div class="reception_list" *ngIf="showList">
+  <header>
+    <a href="javascript:void(0);" (click)="backReception()">
+      <i class="icon-angle-left"></i>
+    </a>
+    <span>接待列表</span>
+    <em (click)="showFilterPanel()">
+      <i class="icon-filter2"></i>
+    </em>
+  </header>
+  <section>
+    <div class="reception_short">
+      <div>
+        <em>
+          <i class="icon-file-minus"></i>
+        </em>
+        <p>
+          <span>房号：</span>1608</p>
+        <p>
+          <span>状态：</span>入住</p>
+        <p>
+          <span>房类：</span>豪华房</p>
+        <p>
+          <span>入住类别：</span>正常</p>
+        <p>
+          <span>姓名：</span>邹萍</p>
+        <p>
+          <span>客源：</span>公司会员</p>
+      </div>
+      <P (click)="seeOrderDetail()">
+        <span>立即查看</span>
+      </P>
+    </div>
+    <div class="reception_short">
+      <div>
+        <em>
+          <i class="icon-file-minus"></i>
+        </em>
+        <p>
+          <span>房号：</span>1808</p>
+        <p>
+          <span>状态：</span>入住</p>
+        <p>
+          <span>房类：</span>行政豪华房</p>
+        <p>
+          <span>入住类别：</span>正常</p>
+        <p>
+          <span>姓名：</span>王强</p>
+        <p>
+          <span>客源：</span>非会员</p>
+      </div>
+      <P (click)="seeOrderDetail()">
+        <span>立即查看</span>
+      </P>
+    </div>
+    <div class="reception_short">
+      <div>
+        <em>
+          <i class="icon-file-minus"></i>
+        </em>
+        <p>
+          <span>房号：</span>1811</p>
+        <p>
+          <span>状态：</span>入住</p>
+        <p>
+          <span>房类：</span>行政豪华房</p>
+        <p>
+          <span>入住类别：</span>正常</p>
+        <p>
+          <span>姓名：</span>王帆</p>
+        <p>
+          <span>客源：</span>个人会员</p>
+      </div>
+      <P (click)="seeOrderDetail()">
+        <span>立即查看</span>
+      </P>
+    </div>
+  </section>
+</div>
+<div class="reception_filter" *ngIf="showFilter">
+  <div class="filter_panel">
+    <h3>筛选</h3>
+    <div class="user_type">
+      <ul>
+        <li *ngFor="let utype of Utypes" [class.cur]="utype===curUtype" (click)="checkThis(utype)">
+          <i class="icon-circle2"></i>
+          <i class="icon-check-circle2"></i>
+          <span>{{utype.names}}</span>
+        </li>
+      </ul>
+    </div>
+    <div class="date_check">
+      <div>
+        <span>入住时间</span>
+        <p><input type="text" readonly value="2018-05-28"><i class="icon-calendar3"></i></p>
+      </div>
+      <div>
+        <span>离店时间</span>
+        <p><input type="text" readonly value="2018-05-30"><i class="icon-calendar3"></i></p>
+      </div>
+      <div>
+        <span>房间号码</span>
+        <p><input type="text" readonly value="1608"></p>
+      </div>
+      <div>
+        <span>客人/中介</span>
+        <p><input type="text" readonly value="邹萍"></p>
+      </div>
+    </div>
+    <div class="receving_state">
+      <h4>接待状态</h4>
+      <div>
+        <ul>
+          <li *ngFor="let statu of RStatus" [class.cur]="statu===curStatu" (click)="getCurStatu(statu)"><i class="icon-square2"></i><i class="icon-check-square2"></i>{{statu.name}}</li>
+        </ul>
+      </div>
+    </div>
+    <button (click)="backToList()">查询</button>
+  </div>
+</div>

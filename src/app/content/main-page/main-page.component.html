@@ -1,0 +1,106 @@
+<div class="main_page">
+  <header>
+    <a href="javascript:void(0);" (click)="toggleSidebar()" class="side-toggle">
+      <i class="icon-navicon"></i>
+    </a>
+    <span (click)="backMain()" ></span>
+    <a href="javascript:void(0);" class="user-entry"><img src="../../../assets/images/default_logo.png" alt=""></a>
+  </header>
+  <section>
+    <div class="quick_link">
+      <ul>
+        <li *ngFor="let linkData of mainData"><em (click)="goNextEntry(linkData)" [ngStyle]="{'background-color':linkData.bgcolor}"><i class="{{linkData.icons}}"></i></em><span>{{linkData.itemname}}</span></li>
+      </ul>
+    </div>
+  </section>
+  <section>
+    <div class="room_summary">
+      <h3>客房概要</h3>
+      <ul>
+        <li><em>70%</em><span>出租率</span></li>
+        <li><em>2</em><span>今日将离</span></li>
+        <li><em>3</em><span>今日将到</span></li>
+        <li><em>75/40</em><span>占用房/可用房</span></li>
+      </ul>
+    </div>
+  </section>
+  <section>
+    <div class="roo_detail">
+      <h3>房价/房型</h3>
+      <table>
+        <thead>
+          <tr>
+            <th>房型</th>
+            <th>可住房</th>
+            <th>占用房</th>
+            <th>可订房</th>
+            <th>均价</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td>行政尊贵套房</td>
+            <td>6</td>
+            <td>45</td>
+            <td>45</td>
+            <td>￥2700</td>
+          </tr>
+          <tr>
+            <td>行政套房<br/>(江景大床套房)</td>
+            <td>2</td>
+            <td>6</td>
+            <td>6</td>
+            <td>￥1600</td>
+          </tr>
+          <tr>
+            <td>行政豪华房<br/>(江景双床房)</td>
+            <td>2</td>
+            <td>10</td>
+            <td>10</td>
+            <td>￥2000</td>
+          </tr>
+          <tr>
+            <td>豪华房<br/>(江景大床房)</td>
+            <td>1</td>
+            <td>4</td>
+            <td>4</td>
+            <td>￥1700</td>
+          </tr>
+          <tr>
+            <td>标准房<br/>(街景/江景双床房)</td>
+            <td>4</td>
+            <td>8</td>
+            <td>8</td>
+            <td>￥800</td>
+          </tr>
+          <tr>
+            <td>联通房</td>
+            <td>2</td>
+            <td>2</td>
+            <td>2</td>
+            <td>￥2000</td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+  </section>
+  <section>
+    <div class="today_about">
+      <h3>今日将到</h3>
+      <div class="item_detail">
+        <p><em>姓名：</em><span>周琳琳</span></p>
+        <p><em>手机号码：</em><span>18602153546</span></p>
+        <p><em>房型：</em><span>行政尊贵套房</span></p>
+        <p><em>预抵时间：</em><span>12:00</span></p>
+        <p><em>房数：</em><span>1</span></p>
+      </div>
+      <div class="item_detail">
+        <p><em>姓名：</em><span>林雯雯</span></p>
+        <p><em>手机号码：</em><span>13202215468</span></p>
+        <p><em>房型：</em><span>行政套房</span></p>
+        <p><em>预抵时间：</em><span>14:00</span></p>
+        <p><em>房数：</em><span>2</span></p>
+      </div>
+    </div>
+  </section>
+</div>

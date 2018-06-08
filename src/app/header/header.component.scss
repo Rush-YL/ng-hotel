@@ -1,0 +1,42 @@
+header{
+  position: fixed;
+  left:0;
+  top:0;
+  width:100vw;
+  height:11.73vw;
+  line-height: 11.73vw;
+  text-align: center;
+  background-color: #1B7CBD;
+  z-index:99;
+  .side-toggle{
+    position: absolute;
+    left:0;
+    top:0;
+    height:11.73vw;
+    width:12vw;
+    i{
+      line-height: 11.73vw;
+      font-size: 6vw;
+      color:#FFF;
+    }
+  }
+  span{
+    font-size: 4.8vw;
+    color:#FFF;
+  }
+  .user-entry{
+    position: absolute;
+    right: 0;
+    top:0;
+    width:12vw;
+    height: 11.73vw;
+    overflow: hidden;
+    img{
+      display: block;
+      width:7.73vw;
+      height: 7.73vw;
+      border-radius:50%;
+      margin:2vw auto;
+    }
+  }
+}

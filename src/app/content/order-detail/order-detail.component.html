@@ -1,0 +1,107 @@
+<div class="order_detail">
+  <header>
+    <a href="javascript:void(0);" (click)="backToWhereFrom()">
+      <i class="icon-angle-left"></i>
+    </a>
+    <span>订单详情</span>
+  </header>
+  <section>
+    <div class="custom_mes">
+      <h3>客户信息</h3>
+      <p>姓名<span>邹萍</span></p>
+      <p>手机<span>13023112548</span></p>
+      <p>证件号码<span>420010198810252515</span></p>
+    </div>
+    <div class="vip_mes">
+      <h3>会员/公司信息</h3>
+      <p>客源<span>公司会员</span></p>
+      <p>卡号<span>VXW12515125116</span></p>
+      <p>级别<span>铂金会员</span></p>
+    </div>
+    <div class="room_mes">
+      <h3>房间信息</h3>
+      <p>房号<span>1608</span></p>
+      <p>房价<span>1700.00</span></p>
+      <p>天数<span>2</span></p>
+      <p>入住类型<span>正常</span></p>
+      <p>入住时间<span>2018-5-26</span></p>
+      <p>离店时间<span>2018-5-28</span></p>
+      <p>房型<span>豪华房</span></p>
+    </div>
+    <div class="room_service">
+      <a href="javascript:void(0);" (click)="changeRoom()">点此换房</a>
+      <a href="javascript:void(0);" (click)="roomStay()">房间续住</a>
+      <a href="javascript:void(0);" (click)="changeRoom()">免费换房</a>
+      <a href="javascript:void(0);">添加联房</a>
+    </div>
+    <div class="user_action">
+      <button (click)="backMain()">保存</button>
+      <button (click)="showMoreAct()">更多操作</button>
+    </div>
+  </section>
+</div>
+<div class="stay_over" *ngIf="showStay">
+  <section>
+    <h3>房间续住</h3>
+    <div class="stay_time">
+      <p><span>开始时间：</span>2018-05-26</p>
+      <p><span>入住天数：</span>2</p>
+      <p [ngClass]="{'time_check': true, 'cur': true}"><i class="icon-circle2"></i><i class="icon-check-circle2"></i>续半天</p>
+      <p [ngClass]="{'time_check': true, 'cur': false}"><i class="icon-circle2"></i><i class="icon-check-circle2"></i>续1天</p>
+      <p [ngClass]="{'time_check': true, 'cur': false}"><i class="icon-circle2"></i><i class="icon-check-circle2"></i>续2天</p>
+      <div>
+        <span>离店时间</span>
+        <em>2018-05-28 14:00:00 <i class="icon-calendar3"></i></em>
+      </div>
+    </div>
+    <p class="act_btn">
+      <a href="javascript:void(0);" (click)="backDetail()">保存</a>
+      <a href="javascript:void(0);" (click)="backDetail()">返回</a>
+    </p>
+  </section>
+</div>
+<div class="change_room" *ngIf="showRoomChange">
+  <header>
+    <a href="javascript:void(0);" (click)="backDetail()">
+      <i class="icon-angle-left"></i>
+    </a>
+    <span>换房</span>
+  </header>
+  <section>
+    <div class="confirm_money">
+      <h3>核对房价信息</h3>
+      <div>
+        <p>房号：1808</p>
+        <p>姓名：王强</p>
+        <p>房型：街景标准房</p>
+        <p>房价：800.00</p>
+        <p>房态：入住</p>
+        <p>主单：是</p>
+        <p>到达：2018-05-26 12:00:00</p>
+        <p>离开：2018-05-29 12:00:00</p>
+      </div>
+    </div>
+    <div class="target_room_select">
+      <h3>请选择目标房间</h3>
+      <div>
+        <p>选择房型<em>江景标准房</em></p>
+        <p>选择原因<em>房间临街太吵，想换为江景房</em></p>
+        <p>房间号码<em>1888</em></p>
+        <p>当天房价<em>800.00</em></p>
+        <p>当天房态<em>入住</em></p>
+      </div>
+      <button (click)="showAuCard()">提交</button>
+    </div>
+  </section>
+</div>
+<div class="authorized_work_card" *ngIf="showCard">
+  <header>
+    <a href="javascript:void(0);" (click)="backDetail()">
+      <i class="icon-angle-left"></i>
+    </a>
+    <span>工牌授权</span>
+  </header>
+  <section>
+
+  </section>
+</div>

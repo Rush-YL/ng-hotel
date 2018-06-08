@@ -1,0 +1,40 @@
+<div class="money_income">
+    <header>
+      <a href="javascript:history.back();">
+        <i class="icon-angle-left"></i>
+      </a>
+      <span>入账</span>
+    </header>
+    <section>
+      <div class="lock_div">
+        <h3>锁定客人</h3>
+        <p>房号 <span>[1608]邹萍</span></p>
+      </div>
+      <div class="lock_div">
+        <h3>锁定营业项目</h3>
+        <p (click)="showSelect()">代码 <span>{{curItem.name}}</span></p>
+      </div>
+      <div class="finance_items">
+        <p><span>金额</span><em>200</em></p>
+        <p><span>备注</span><em>房内小酒吧消费</em></p>
+        <p><span>单号</span><em></em></p>
+        <p><span>账户</span><em>[1608]邹萍</em></p>
+        <p><span>日期</span><em>2018-03-20</em></p>
+        <p><span>到达</span><em>2018-03-20 12:00:00</em></p>
+        <p><span>离开</span><em>2018-03-23 12:00:00</em></p>
+        <p><span>余额</span><em>0.00</em></p>
+        <p><span>信用</span><em>0.00</em></p>
+      </div>
+      <div class="finance_act">
+        <a href="javascript:void(0);" class="cur" (click)="backIncome()">入账</a>
+        <a href="javascript:void(0);">优惠券</a>
+        <a href="javascript:void(0);">招行POS</a>
+        <a href="javascript:void(0);">联通POS</a>
+      </div>
+      <div class="item_selector" *ngIf="showSelectPanel">
+        <div>
+          <p *ngFor="let item of items" (click)="checkItem(item)">{{item.name}}</p>
+        </div>
+      </div>
+    </section>
+  </div>

@@ -1,0 +1,31 @@
+<div class="confirm_order">
+  <header>
+    <a href="javascript:void(0);" (click)="backToPreorder()">
+      <i class="icon-angle-left"></i>
+    </a>
+    <span>确认入住信息</span>
+  </header>
+  <section>
+    <p class="tip_bar">入住已完成，请确认以下信息</p>
+    <div class="hotel_order">
+      <p class="holder_name">莱福特酒店 <em>豪华房，1间</em></p>
+      <div>
+        <p>房间号：1608</p>
+        <p>入住人：邹萍</p>
+        <p>入住时间：2018-5-26 12:00</p>
+        <p>离店时间：2018-5-28 12:00</p>
+        <p>均价：1700.00</p>
+        <p>天数：2</p>
+        <p>押金：500元</p>
+      </div>
+      <p class="total_money">总金额：<sub>￥</sub><span>3900</span></p>
+    </div>
+    <div class="order_action">
+      <a href="javascript:void(0);">入押金</a>
+      <a href="javascript:void(0);">提前结账</a>
+      <a href="javascript:void(0);" (click)="makeCard()">制作房卡</a>
+      <a href="javascript:void(0);" (click)="seeOrderDetail()">接待详单</a>
+      <a href="javascript:void(0);" (click)="printDcoument()">打印单据</a>
+    </div>
+  </section>
+</div>

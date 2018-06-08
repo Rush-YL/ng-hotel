@@ -1,0 +1,16 @@
+body{
+  font-family: 'Microsoft Yahei';
+  padding-top: 11.73vw;
+}
+*,*:before,*:after{
+  box-sizing: border-box;
+  margin:0;
+  padding:0;
+}
+a,input,textarea,button{
+  -webkit-tap-highlight-color: transparent;
+}
+a{text-decoration: none;outline: none;}
+ul,ol,li{list-style: none;}
+em,strong,i{font-style: normal;}
+.loader{position:absolute;top:50%;left:40%}.line{-webkit-animation:1s ease-in-out infinite expand;animation:1s ease-in-out infinite expand;border-radius:10px;display:inline-block;-webkit-transform-origin:center center;transform-origin:center center;margin:0 3px;width:1px;height:30px}.line:nth-child(1){background:#db2828}.line:nth-child(2){-webkit-animation-delay:180ms;animation-delay:180ms;background:#f2711c}.line:nth-child(3){-webkit-animation-delay:360ms;animation-delay:360ms;background:#fbbd08}.line:nth-child(4){-webkit-animation-delay:540ms;animation-delay:540ms;background:#b5cc18}.line:nth-child(5){-webkit-animation-delay:720ms;animation-delay:720ms;background:#21ba45}.line:nth-child(6){-webkit-animation-delay:.9s;animation-delay:.9s;background:#00b5ad}.line:nth-child(7){-webkit-animation-delay:1.08s;animation-delay:1.08s;background:#2185d0}.line:nth-child(8){-webkit-animation-delay:1.26s;animation-delay:1.26s;background:#6435c9}.line:nth-child(9){-webkit-animation-delay:1.44s;animation-delay:1.44s;background:#a333c8}@-webkit-keyframes expand{0%{-webkit-transform:scale(1);transform:scale(1)}25%{-webkit-transform:scale(2);transform:scale(2)}}@keyframes expand{0%{-webkit-transform:scale(1);transform:scale(1)}25%{-webkit-transform:scale(2);transform:scale(2)}}

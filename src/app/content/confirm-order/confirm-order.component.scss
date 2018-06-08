@@ -1,0 +1,114 @@
+.confirm_order{
+  position: fixed;
+  left:0;
+  top:0;
+  width: 100%;
+  height: 100%;
+  background-color: #FFF;
+  overflow: hidden;
+  z-index: 101;
+  header{
+    position: absolute;
+    width:100vw;
+    height:11.73vw;
+    line-height: 11.73vw;
+    text-align: center;
+    background-color: #1B7CBD;
+    z-index:102;
+    a{
+      position: absolute;
+      left:0;
+      top:0;
+      height:11.73vw;
+      width:12vw;
+      text-align: left;
+      text-indent: 3.2vw;
+      i{
+        line-height: 11.73vw;
+        font-size: 8vw;
+        color:#FFF;
+      }
+    }
+    span{
+      font-size: 4.8vw;
+      color:#FFF;
+      font-family: "Microsoft YaHei";
+    }
+  }
+  section{
+    position: absolute;
+    left:0;
+    top:11.73vw;
+    width:100vw;
+    height: calc(100% - 11.73vw);
+    overflow-x: hidden;
+    overflow-y: auto;
+    .tip_bar{
+      height: 12vw;
+      line-height: 12vw;
+      padding: 0 3.2vw;
+      background-color: #F5F5F5;
+      border-bottom: 1px solid #E1E1E1;
+      color:#666;
+    }
+    .hotel_order{
+      height: 108vw;
+      border-bottom: 2.66vw solid #F5F5F5;
+      .holder_name{
+        height: 12vw;
+        line-height: 12vw;
+        padding: 0 3.2vw;
+        border-bottom: 1px solid #E1E1E1;
+        em{
+          float: right;
+        }
+      }
+      div{
+        padding-top: 3vw;
+        p{
+          height: 10.8vw;
+          padding: 0 3.2vw;
+          line-height: 10.8vw;
+          font-size: 3.466vw;
+          color:#666;
+        }
+      }
+      .total_money{
+        height: 14.5vw;
+        line-height: 14.5vw;
+        padding: 0 3.2vw;
+        border-top: 1px solid #E1E1E1;
+        text-align: right;
+        sub{
+          vertical-align: middle;
+          color: #F86F14;
+        }
+        span{
+          color:#F86F14;
+        }
+      }
+    }
+    .order_action{
+      overflow: hidden;
+      padding: 5vw 3.2vw;
+      a{
+        float: left;
+        width: 45vw;
+        height: 12vw;
+        margin-bottom: 6.66vw;
+        text-align: center;
+        line-height: 11.2vw;
+        border:1px solid #1B7CBD;
+        border-radius: 2vw;
+        color:#1B7CBD;
+        &:nth-child(2n+1){
+          margin-right: 3.6vw;
+        }
+        &:nth-child(4){
+          background-color: #1B7CBD;
+          color:#FFF;
+        }
+      }
+    }
+  }
+}

@@ -1,0 +1,23 @@
+<div class="room_manage">
+  <header>
+    <a href="javascript:history.back();">
+      <i class="icon-angle-left"></i>
+    </a>
+    <span>房间管理</span>
+  </header>
+  <section>
+    <div class="room_tap">
+      <p *ngFor="let roomtype of roomtypes"
+      [ngClass]="{'cur':roomtype.iscurroom}"
+      (click)="toggleCurRoom(roomtype)"><i></i><span>{{roomtype.cleanliness}}</span></p>
+    </div>
+    <div class="room_holder">
+      <div *ngFor="let rooms of roomnumbers"
+           [ngClass]="{'room_wall':true,'cur':rooms.curshow}"
+           (click)="getCurRoomNum($event)">
+        <em *ngFor="let roomnum of rooms.roomNum">{{roomnum}}</em>
+      </div>
+      <button (click)="backReservation()">提交</button>
+    </div>
+  </section>
+</div>

@@ -1,0 +1,163 @@
+<div class="protocol">
+  <header>
+    <a href="javascript:void(0);" (click)="backToMain()">
+      <i class="icon-angle-left"></i>
+    </a>
+    <span>礼宾服务</span>
+  </header>
+  <section>
+    <div class="protocol_list">
+      <p (click)="showWeekPanel()">叫醒服务管理<i class="icon-angle-right"></i></p>
+      <p (click)="showGoodsPanel()">物品服务管理<i class="icon-angle-right"></i></p>
+    </div>
+  </section>
+</div>
+<div class="protocol_week" *ngIf="showWeek">
+  <header>
+    <a href="javascript:void(0);" (click)="hideWeek()">
+      <i class="icon-angle-left"></i>
+    </a>
+    <span>新增叫醒</span>
+    <em (click)="getSearch()"><i class="icon-search"></i></em>
+  </header>
+  <section>
+    <div class="week_type">
+      <p class="cur"><i class="icon-circle2"></i><i class="icon-check-circle2"></i>个人</p>
+      <p><i class="icon-circle2"></i><i class="icon-check-circle2"></i>团队</p>
+    </div>
+    <p class="tips">提示：选择个人时可根据房间号或姓名查询，选择 团队时可根据团队名称查询。</p>
+  </section>
+</div>
+<div class="week_search" *ngIf="showWeekSearch">
+  <header>
+    <a href="javascript:void(0);" (click)="hideWeekSearch()">
+      <i class="icon-angle-left"></i>
+    </a>
+    <div><i class="icon-search"></i><input type="text" readonly value="1608"><em class="icon-delete"></em></div>
+  </header>
+  <section>
+    <div class="room_panel">
+      <div class="room_card cur">
+        <div>
+          <p><span>房间号码：</span><em>1608</em></p>
+          <p><span>房类：</span><em>豪华房</em></p>
+          <p><span>客人姓名：</span><em>邹萍</em></p>
+          <p><span>到达：</span><em>2018-05-28</em></p>
+          <p><span>入住类型：</span><em>正常</em></p>
+          <p><span>离开：</span><em>2018-05-30</em></p>
+        </div>
+        <i class="icon-circle2"></i>
+        <i class="icon-check-circle2"></i>
+      </div>
+      <div class="room_card">
+        <div>
+          <p><span>房间号码：</span><em>1608</em></p>
+          <p><span>房类：</span><em>豪华房</em></p>
+          <p><span>客人姓名：</span><em>邹萍</em></p>
+          <p><span>到达：</span><em>2018-05-28</em></p>
+          <p><span>入住类型：</span><em>正常</em></p>
+          <p><span>离开：</span><em>2018-05-30</em></p>
+        </div>
+        <i class="icon-circle2"></i>
+        <i class="icon-check-circle2"></i>
+      </div>
+    </div>
+    <div class="time_panel">
+      <h3>添加叫醒时间<span>（此叫醒在24小时）</span></h3>
+      <div class="time_div">
+        <span>叫醒日期：</span>
+        <div>
+          <p><input type="text" readonly value="2018-05-28"><i class="icon-caret-down"></i></p>
+        </div>
+      </div>
+      <div class="time_div">
+        <span>叫醒时间：</span>
+        <div>
+            <p><input type="text" readonly value="8"><i class="icon-caret-down"></i></p> 时
+            <p><input type="text" readonly value="30"><i class="icon-caret-down"></i></p> 分钟
+        </div>
+      </div>
+      <div class="time_div">
+        <span>备注：</span>
+        <div>
+          <p><input type="text" placeholder="2018年3月21日早上8:30的叫醒服务" value="2018年3月21日早上8:30的叫醒服务"></p>
+        </div>
+      </div>
+    </div>
+    <button (click)="hideWeekSearch()">保存</button>
+  </section>
+</div>
+<div class="goods_panel" *ngIf="goodsPanel">
+  <header>
+    <a href="javascript:void(0);" (click)="backProtocol()">
+      <i class="icon-angle-left"></i>
+    </a>
+    <span>物品借用管理</span>
+    <em (click)="goodsFilter()"><i class="icon-filter2"></i></em>
+  </header>
+  <section>
+    <p class="tap_change" (click)="tabChange($event)"><span>归还物品</span><span class="cur">物品管理</span></p>
+    <div class="give_back" *ngIf="showBack">
+      <div class="back_goods_panel" *ngFor="let good of goods" [class.cur]="good===curgood" (click)="getCurGood(good)">
+        <div class="back_goods">
+          <div>
+            <p><span>房间号码：</span><em>{{good.roomnum}}</em></p>
+            <p><span>数量：</span><em>{{good.amount}}</em></p>
+            <p><span>客人姓名：</span><em>{{good.username}}</em></p>
+            <p><span>借用状态：</span><em>{{good.status}}</em></p>
+            <p><span>物品名称：</span><em>{{good.goodsname}}</em></p>
+            <p><span>操作人：</span><em>{{good.actor}}</em></p>
+            <p><span>借用时间：</span><em>{{good.time}}</em></p>
+          </div>
+          <i class="icon-circle2"></i>
+          <i class="icon-check-circle2"></i>
+        </div>
+      </div>
+      <button (click)="backProtocol()">归还</button>
+    </div>
+    <div class="goods_manage" *ngIf="showManage">
+      <div class="manage_div"><a href="javascript:void(0);">新增物品借用</a></div>
+      <div class="goods_panel">
+        <p><span>房间号码</span><em>1808</em></p>
+        <p><span>客人姓名</span><em>王强</em></p>
+        <p><span>物品名称</span><em>电子血压计</em></p>
+        <p><span>数量</span><em>1</em></p>
+        <p><span>借用状态</span><em>出借中</em></p>
+        <p><span>借用时间</span><em>2018-05-28 20:30:00</em></p>
+        <p><span>操作人</span><em>admin</em></p>
+      </div>
+      <button (click)="backProtocol()">保存</button>
+    </div>
+    <div class="goods_filter" *ngIf="showFilter">
+      <div class="filter_conts">
+        <h4>筛选</h4>
+        <div class="item_div">
+          <div>
+            <span>开始时间</span>
+            <p><input type="text" readonly value="2018-03-20"><i class="icon-calendar3"></i></p>
+          </div>
+          <div>
+            <span>结束时间</span>
+            <p><input type="text" readonly value="2018-03-21"><i class="icon-calendar3"></i></p>
+          </div>
+          <div>
+            <span>出借状态</span>
+            <p><input type="text" readonly value="出借中"></p>
+          </div>
+          <div>
+            <span>房间号码</span>
+            <p><input type="text" readonly value="1808"></p>
+          </div>
+          <div>
+            <span>客人姓名</span>
+            <p><input type="text" readonly value="王强"></p>
+          </div>
+          <div>
+            <span></span>
+            <p><a href="javascript:void(0);" (click)="hideFilter()">查询</a></p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+</div>

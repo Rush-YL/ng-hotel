@@ -1,0 +1,309 @@
+.reservelist{
+  position: fixed;
+  left: 0;
+  top: 0;
+  width: 100%;
+  height: 100%;
+  background-color: #FFF;
+  z-index: 101;
+  header{
+    position: absolute;
+    width:100vw;
+    height:11.73vw;
+    line-height: 11.73vw;
+    text-align: center;
+    background-color: #1B7CBD;
+    z-index:102;
+    a{
+      position: absolute;
+      left:0;
+      top:0;
+      height:11.73vw;
+      width:12vw;
+      text-align: left;
+      text-indent: 3.2vw;
+      i{
+        line-height: 11.73vw;
+        font-size: 8vw;
+        color:#FFF;
+      }
+    }
+    span{
+      font-size: 4.8vw;
+      color:#FFF;
+      font-family: "Microsoft YaHei";
+    }
+    em{
+      position: absolute;
+      right: 0;
+      top: 0;
+      height: 11.73vw;
+      width: 13vw;
+      i{
+        line-height: 11.73vw;
+        font-size: 5vw;
+        color:#FFF;
+      }
+    }
+  }
+  section{
+    position: absolute;
+    left:0;
+    top:11.73vw;
+    width:100vw;
+    height: calc(100% - 11.73vw);
+    overflow-x: hidden;
+    overflow-y: auto;
+    .reserve_tap{
+      height: 12vw;
+      border-bottom: 1px solid #E1E1E1;
+      span{
+        float: left;
+        width: 50%;
+        height: 12vw;
+        text-align: center;
+        line-height: 12vw;
+        border-bottom: 2px solid transparent;
+        &.cur{
+          color: #1B7CBD;
+          border-bottom-color: #1B7CBD;
+        }
+      }
+    }
+    .reserve_list_holder{
+      .reserve_short{
+        height: 39.733vw;
+        border-bottom: 2.666vw solid #F5F5F5;
+        div{
+          position: relative;
+          height: 26.4vw;
+          padding-left: 11.866vw;
+          padding-top: 3vw;
+          em{
+            position: absolute;
+            left: 3.2vw;
+            top: 4vw;
+            width: 5.6vw;
+            height: 5.6vw;
+            line-height: 5.6vw;
+            background-color: #1B7CBD;
+            border-radius: 5.6vw;
+            text-align: center;
+            i{
+              font-size: 2.535vw;
+              line-height: 5.6vw;
+              color: #FFF;
+            }
+          }
+          p{
+            height: 7.466vw;
+            line-height: 7.466vw;
+            font-size: 3.733vw;
+            span{
+              display: inline-block;
+              width: 15.2vw;
+              text-align: right;
+            }
+            &:nth-child(2){
+              color: #333;
+            }
+            &:nth-child(3),&:nth-child(4){
+              color: #666;
+            }
+          }
+        }
+        &>p{
+          height: 10.4vw;
+          line-height: 10.4vw;
+          padding:0 3.2vw 0 11.866vw;
+          font-size: 3.733vw;
+          color: #333;
+          border-top: 1px solid #E1E1E1;
+          i{
+            float: right;
+            font-size: 7vw;
+            line-height: 10.4vw;
+            color: #BBB;
+          }
+        }
+      }
+    }
+    .scan_holder{
+      .scan_card_step,.scan_card_result{
+        display: none;
+        width: 100vw;
+        height: 62vw;
+        background-repeat: no-repeat;
+        background-size: 100vw 62vw;
+        background-position: center;
+        &.cur{
+          display: block;
+        }
+      }
+      .scan_card_step{
+        background-image: url(../../../assets/images/scan.png);
+      }
+      .scan_card_result{
+        background-image: url(../../../assets/images/scan_result.png);
+      }
+    }
+  }
+}
+.reserve_search{
+  position: fixed;
+  left: 0;
+  top: 0;
+  width: 100vw;
+  height: 100%;
+  background-color: #FFF;
+  z-index: 110;
+  header{
+    position: absolute;
+    width:100vw;
+    height:11.73vw;
+    line-height: 11.73vw;
+    text-align: center;
+    background-color: #1B7CBD;
+    z-index:102;
+    a{
+      position: absolute;
+      left:0;
+      top:0;
+      height:11.73vw;
+      width:12vw;
+      text-align: left;
+      text-indent: 3.2vw;
+      i{
+        line-height: 11.73vw;
+        font-size: 8vw;
+        color:#FFF;
+      }
+    }
+    div{
+      position: relative;
+      width: 80vw;
+      height: 8vw;
+      margin: 1.865vw auto;
+      background-color: #FFF;
+      border-radius: 4vw;
+      overflow: hidden;
+      i{
+        position: absolute;
+        left: 0;
+        top: 0;
+        height: 8vw;
+        width: 8vw;
+        line-height: 8vw;
+        text-indent: 1vw;
+        font-size: 5vw;
+        color: #1B7CBD;
+      }
+      input{
+        position: absolute;
+        left: 8vw;
+        top: 0;
+        height: 8vw;
+        width:60vw;
+        border:none;
+        outline: none;
+        font-size: 4vw;
+        font-family: "Microsoft YaHei";
+        color: rgb(51, 51, 51);
+      }
+      em{
+        position: absolute;
+        right: 0;
+        top: 0;
+        width: 11vw;
+        height: 8vw;
+        line-height: 8vw;
+        font-size: 7vw;
+        color: #A2A2A2;
+      }
+    }
+  }
+  section{
+    position: absolute;
+    left:0;
+    top:11.73vw;
+    width:100vw;
+    height: calc(100% - 11.73vw);
+    overflow-x: hidden;
+    overflow-y: auto;
+    .reserve_short{
+      height: 39.733vw;
+      border-bottom: 2.666vw solid #F5F5F5;
+      div{
+        position: relative;
+        height: 26.4vw;
+        padding-left: 11.866vw;
+        padding-top: 3vw;
+        em{
+          position: absolute;
+          left: 3.2vw;
+          top: 4vw;
+          width: 5.6vw;
+          height: 5.6vw;
+          line-height: 5.6vw;
+          background-color: #1B7CBD;
+          border-radius: 5.6vw;
+          text-align: center;
+          i{
+            font-size: 2.535vw;
+            line-height: 5.6vw;
+            color: #FFF;
+          }
+        }
+        p{
+          height: 7.466vw;
+          line-height: 7.466vw;
+          font-size: 3.733vw;
+          span{
+            display: inline-block;
+            width: 15.2vw;
+            text-align: right;
+          }
+          &:nth-child(2){
+            color: #333;
+          }
+          &:nth-child(3),&:nth-child(4){
+            color: #666;
+          }
+        }
+      }
+      &>p{
+        height: 10.4vw;
+        line-height: 10.4vw;
+        padding:0 3.2vw 0 11.866vw;
+        font-size: 3.733vw;
+        color: #333;
+        border-top: 1px solid #E1E1E1;
+        i{
+          float: right;
+          font-size: 7vw;
+          line-height: 10.4vw;
+          color: #BBB;
+        }
+      }
+    }
+  }
+}
+@media screen and (max-width:500px) {
+  .reservelist{
+    section{
+      .reserve_list_holder{
+        .reserve_short{
+          div{
+            em{
+              line-height: 5vw;
+              i{
+                display: inline-block;
+                transform: scale(.75)
+              }
+            }
+          }
+        }
+      }
+    }
+  }
+}

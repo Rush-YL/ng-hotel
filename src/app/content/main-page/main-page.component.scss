@@ -1,0 +1,218 @@
+.main_page{
+  position: fixed;
+  left:0;
+  top:0;
+  width:100%;
+  height: 100%;
+  background-color: #FFF;
+  z-index:200;
+  padding-top: 11.73vw;
+  overflow-x: hidden;
+  overflow-y: auto;
+  header{
+    position: fixed;
+    left:0;
+    top:0;
+    width:100vw;
+    height:11.73vw;
+    line-height: 11.73vw;
+    text-align: center;
+    background-color: #1B7CBD;
+    background-image: url(../../../assets/images/pass_title.png);
+    background-repeat: no-repeat;
+    background-size: 30vw 11.73vw;
+    background-position: center;
+    z-index:99;
+    .side-toggle{
+      position: absolute;
+      left:0;
+      top:0;
+      height:11.73vw;
+      width:12vw;
+      i{
+        line-height: 11.73vw;
+        font-size: 6vw;
+        color:#FFF;
+      }
+    }
+    span{
+      display: block;
+      width: 60vw;
+      height: 11.73vw;
+      margin: 0 auto;
+      font-size: 4.8vw;
+      color:#FFF;
+    }
+    .user-entry{
+      position: absolute;
+      right: 0;
+      top:0;
+      width:12vw;
+      height: 11.73vw;
+      overflow: hidden;
+      img{
+        display: block;
+        width:7.73vw;
+        height: 7.73vw;
+        border-radius:50%;
+        margin:2vw auto;
+      }
+    }
+  }
+  section{
+    border-bottom: 2.666vw solid #F5F5F5;
+    &:last-child{
+      border:none;
+    }
+    .quick_link{
+      padding-top: 5vw;
+      ul{
+        overflow: hidden;
+        li{
+          float: left;
+          height: 25.066vw;
+          list-style: none;
+          text-align: center;
+          &:nth-child(3n+1){width:23vw;}
+          &:nth-child(3n+2){width:52.2vw;}
+          &:nth-child(3n){width:24.8vw;}
+          em{
+            display: block;
+            width: 11.73vw;
+            height: 11.73vw;
+            text-align: center;
+            border-radius: 50%;
+            margin:2vw auto 1.5vw;
+            i{
+              font-size: 6vw;
+              line-height: 11.73vw;
+              color:#FFF;
+              &.icon-smile-o{
+                font-size: 8vw;
+                line-height: 12vw;
+              }
+              &.icon-rmb{
+                font-size: 6.5vw;
+                line-height: 12vw;
+              }
+            }
+          }
+          span{
+            font-size: 4vw;
+            color:#333;
+          }
+        }
+      }
+    }
+    .room_summary{
+      h3{
+        height: 10vw;
+        line-height: 11vw;
+        font-size: 4vw;
+        font-weight: normal;
+        text-indent: 3.2vw;
+      }
+      ul{
+        height: 16.8vw;
+        li{
+          float: left;
+          padding:1vw 0;
+          margin:0 4vw;
+          text-align: center;
+          list-style: none;
+          em{
+            display: block;
+            font-size: 5vw;
+          }
+          &:nth-child(1) em{
+            color:#FA6774;
+          }
+          &:nth-child(2) em{
+            color:#3BD1B7;
+          }
+          &:nth-child(3) em{
+            color:#FF8B53;
+          }
+          &:nth-child(4) em{
+            color:#AA79F6;
+          }
+          span{
+            font-size: 3.466vw;
+          }
+        }
+      }
+    }
+    .roo_detail{
+      padding-bottom: 5vw;
+      h3{
+        height: 10vw;
+        line-height: 11vw;
+        margin-bottom: 2vw;
+        font-size: 4vw;
+        font-weight: normal;
+        text-indent: 3.2vw;
+      }
+      table{
+        width:93.6vw;
+        margin:0 auto;
+        border-collapse: collapse;
+        thead{
+          background-color: #F5F5F5;
+          th{
+            font-weight: normal;
+            height: 7.5vw;
+            border-collapse: collapse;
+          }
+        }
+        tbody{
+          tr{
+            &:nth-child(2n){
+              background-color: #F5F5F5;
+            }
+            td{
+              text-align: center;
+              padding:2vw 0;
+              &:nth-child(1){
+                width: 36.5vw;
+              }
+            }
+          }
+        }
+      }
+    }
+    .today_about{
+      h3{
+        height: 10vw;
+        line-height: 11vw;
+        font-size: 4vw;
+        font-weight: normal;
+        text-indent: 3.2vw;
+      }
+      div{
+        width: 93.6vw;
+        margin:4vw auto;
+        padding: 1vw 0;
+        background-color: #F5F5F5;
+        border-radius:2vw;
+        overflow: hidden;
+        p{
+          text-indent: 3vw;
+          float: left;
+          line-height: 6vw;
+          &:nth-child(2n+1){
+            width:44vw;
+          }
+          em{
+            font-size: 3.466vw;
+            font-family: "Microsoft YaHei";
+            color: rgb(102, 102, 102);
+          }
+          span{
+            font-size: 3.466vw;
+            color:#333;
+          }
+        }
+      }
+    }
+  }
+}

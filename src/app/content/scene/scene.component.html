@@ -1,0 +1,11 @@
+<div class="scene_content">
+  <div class="scene_header">
+    <a href="javascript:void(0);" (click)="backIndex()"><i class="icon-angle-left"></i></a>
+    <span>{{curscene.scenetitle}}</span>
+  </div>
+  <div class="scene_body cur_type_{{curscene.id}}">
+    <div class="cartoon_figure"></div>
+    <div class="dialogs" [innerHTML]="scene.sceneword"></div>
+    <a href="javascript:void(0);" (click)="goToMain()" class="scene_detail_link">下一步</a>
+  </div>
+</div>

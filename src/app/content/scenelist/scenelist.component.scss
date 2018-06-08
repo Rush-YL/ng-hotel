@@ -1,0 +1,39 @@
+.scene-entry{
+  li{
+    overflow: hidden;
+    border-bottom: 1px solid #E1E1E1;
+    a{
+      position: relative;
+      display: block;
+      padding-left: 28vw;
+      img{
+        position: absolute;
+        left:3.06vw;
+        top:3.06vw;
+        width:22.4vw;
+        height:16.8vw;
+      }
+      div{
+        min-height: 23.6vw;
+        padding-bottom: 3vw;
+        padding-right: 3.06vw;
+        h3{
+          padding-top: 3vw;
+          padding-bottom: 1vw;
+          white-space: nowrap;
+          overflow: hidden;
+          text-overflow: ellipsis;
+          font-size: 4vw;
+          color:#333;
+        }
+        p{
+          word-break: break-all;
+          text-align: justify;
+          font-size: 3.466vw;
+          line-height: 1.4;
+          color:#999;
+        }
+      }
+    }
+  }
+}

@@ -1,0 +1,46 @@
+<div class="reservelist">
+  <header>
+    <a href="javascript:void(0);" (click)="backToReserve()">
+      <i class="icon-angle-left"></i>
+    </a>
+    <span>预定列表</span>
+    <em (click)="goSearch()"><i class="icon-search"></i></em>
+  </header>
+  <section>
+    <p class="reserve_tap" (click)="setCurTap($event)"><span class="cur">预定号管理</span><span>证件查订单</span></p>
+    <div *ngIf="showReservelist" class="reserve_list_holder">
+      <div *ngFor="let preorder of preorders" class="reserve_short">
+        <div>
+          <em><i class="icon-file-minus"></i></em>
+          <p><span>预定号：</span>{{preorder.preordernum}}</p>
+          <p><span>姓<i style="display: inline-block;width: 3.733vw;"></i>名：</span>{{preorder.username}}</p>
+          <p><span>手机号：</span>{{preorder.userphone}}</p>
+        </div>
+        <p (click)="seePreorderDetail(preorder)"><span>立即查看</span><i class="icon-angle-right"></i></p>
+      </div>
+    </div>
+    <div *ngIf="showCardSearch" class="scan_holder">
+      <div [ngClass]="{'scan_card_step':true,'cur':curstep}"></div>
+      <div [ngClass]="{'scan_card_result':true,'cur':curResult}"></div>
+    </div>
+  </section>
+</div>
+<div class="reserve_search" *ngIf="showsearch">
+  <header>
+    <a href="javascript:void(0);" (click)="hideSearch()">
+      <i class="icon-angle-left"></i>
+    </a>
+    <div><i class="icon-search"></i><input type="text" value="R20000110000150315"><em class="icon-delete"></em></div>
+  </header>
+  <section>
+    <div class="reserve_short">
+        <div>
+          <em><i class="icon-file-minus"></i></em>
+          <p><span>预定号：</span>{{searchResult.preordernum}}</p>
+          <p><span>姓<i style="display: inline-block;width: 3.733vw;"></i>名：</span>{{searchResult.username}}</p>
+          <p><span>手机号：</span>{{searchResult.userphone}}</p>
+        </div>
+        <p (click)="seePreorderDetail(searchResult)"><span>立即查看</span><i class="icon-angle-right"></i></p>
+      </div>
+  </section>
+</div>

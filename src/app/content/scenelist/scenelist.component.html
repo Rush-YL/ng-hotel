@@ -1,0 +1,13 @@
+<div>
+  <ul class="scene-entry">
+    <li *ngFor="let scenelist of scenelists" (click)="sceneNav(scenelist)">
+      <a>
+        <img src="{{scenelist.imgs}}" alt="">
+        <div>
+          <h3>{{scenelist.title}}</h3>
+          <p>{{scenelist.shortcut}}</p>
+        </div>
+      </a>
+    </li>
+  </ul>
+</div>

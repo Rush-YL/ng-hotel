@@ -1,0 +1,39 @@
+<div class="card">
+  <header>
+    <a href="javascript:history.back();">
+      <i class="icon-angle-left"></i>
+    </a>
+    <span>制卡</span>
+  </header>
+  <section>
+    <div class="card_panel">
+      <h3>卡制作—与登记退房时间相比，延长30分钟</h3>
+      <div class="user_mes">
+        <p>房号：1608</p>
+        <p>姓名：邹萍</p>
+        <p>发卡类型：<em class="cur"><i class="icon-circle2"></i><i class="icon-check-circle2"></i>新卡</em><em><i class="icon-circle2"></i><i class="icon-check-circle2"></i>同住卡</em></p>
+        <p>房态：在住干净房</p>
+        <p>入住时间：2018-03-20 12:00</p>
+        <p>离店时间：2018-03-22 12:00</p>
+      </div>
+      <div class="card_mes">
+        <p>卡房号：1608</p>
+        <p>制卡时间：2018-03-20 12:00:00</p>
+        <p>有效时间：2018-03-22 12:30:00</p>
+        <p>卡类型：新卡</p>
+      </div>
+    </div>
+    <div class="user_acts">
+      <a class="cur" href="javascript:void(0);" (click)="backMoreAct()">制卡</a>
+      <a href="javascript:void(0);">读卡</a>
+      <a href="javascript:void(0);">注销卡</a>
+      <a href="javascript:void(0);">发卡查询</a>
+    </div>
+  </section>
+</div>
+<div class="card_success" *ngIf="showSuccess">
+  <div class="success_div">
+    <em><i class="icon-check2"></i></em>
+    <p>制卡完成</p>
+  </div>
+</div>

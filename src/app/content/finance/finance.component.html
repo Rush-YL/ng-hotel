@@ -1,0 +1,88 @@
+<div class="finance">
+  <header>
+    <a href="javascript:void(0);" (click)="backMoreAct()">
+      <i class="icon-angle-left"></i>
+    </a>
+    <span>账务管理</span>
+  </header>
+  <section>
+    <div class="finance_panel">
+      <div [ngClass]="{'finance_div':true,'cur':isCur}" (click)="selectThis()">
+        <p><span>代码：</span>1000</p>
+        <p><span>时间：</span>2018-03-20 12:00:00</p>
+        <p><span>营业项目：</span>房费</p>
+        <p><span>金额：</span><em>-3900.00</em></p>
+        <p><span>摘要：</span>（2018-03-20）预收</p>
+        <p><span>房号：</span>1608</p>
+        <p><span>用户名：</span>admin</p>
+        <p><span>班次：</span>2</p>
+        <p><span>营业日：</span>2018-03-20</p>
+        <i class="icon-circle2"></i>
+        <i class="icon-check-circle2"></i>
+      </div>
+    </div>
+    <div class="user_acts">
+      <a href="javascript:void(0);" class="cur" (click)="incomeAct()">入账</a>
+      <a href="javascript:void(0);" (click)="regulationAct()">调账</a>
+      <a href="javascript:void(0);" (click)="goPrint()">打印发票</a>
+      <a href="javascript:void(0);" (click)="endSettle()">结账/退房</a>
+    </div>
+    <div class="settle_accounts" *ngIf="showSettle">
+      <div class="settle_panel">
+        <h3>结账</h3>
+        <div class="settle_div">
+          <div>
+            <h4>选中项目</h4>
+            <p><span>预付款合计：</span><input type="text" readonly value="4100.00"></p>
+            <p><span>费用合计：</span><input type="text" readonly value="5300.00"></p>
+          </div>
+          <div>
+            <h4>结算帐目</h4>
+            <p><span>结算费用：</span><input type="text" readonly value="1200.00"></p>
+          </div>
+        </div>
+        <p class="settle_btn"><a href="javascript:void(0);" (click)="backMain()">确定</a><a href="javascript:void(0);" (click)="backIncome()">返回</a></p>
+      </div>
+    </div>
+  </section>
+</div>
+<div class="account_regulation" *ngIf="showRegulation">
+  <header>
+    <a href="javascript:void(0);" (click)="backIncome()">
+      <i class="icon-angle-left"></i>
+    </a>
+    <span>调账</span>
+  </header>
+  <section>
+    <div class="regulation_panel">
+      <p><span>房号</span><em>1888</em></p>
+      <p><span>代码</span><em>7400-棋牌室</em></p>
+      <p><span>理由</span><em>01-总部市场促销（折/抵扣券）</em></p>
+      <p><span>金额</span><em>-240.00</em></p>
+      <p><span>单号</span><em></em></p>
+      <p><span>账户</span><em>[1808]王强</em></p>
+      <p><span>备注</span><em></em></p>
+    </div>
+    <button (click)="showAuthCard()">确定</button>
+  </section>
+</div>
+<div class="authorization" *ngIf="showAuth">
+  <header>
+    <a href="javascript:void(0);" (click)="backRegulation()">
+      <i class="icon-angle-left"></i>
+    </a>
+    <span>刷卡授权</span>
+  </header>
+  <section>
+    <div class="aut_input">
+      <p><span>请输入授权号码</span><input type="text" value="工号021545"></p>
+      <p><span></span><a href="javascript:void(0);" (click)="confirmAuth()">确定</a></p>
+    </div>
+    <div class="loading_wait" *ngIf="onLoading">
+      <div>
+          <i class="icon-loader"></i>
+          <p>正在读卡，请稍后</p>
+      </div>
+    </div>
+  </section>
+</div>

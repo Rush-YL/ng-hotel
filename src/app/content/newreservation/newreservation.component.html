@@ -1,0 +1,140 @@
+<div class="newreservation">
+  <header>
+    <a href="javascript:void(0);" (click)="backRserve()">
+      <i class="icon-angle-left"></i>
+    </a>
+    <span>新建预定</span>
+  </header>
+  <section>
+    <!-- 预定人信息 -->
+    <div class="subscriber_information">
+      <h3>预定人信息</h3>
+      <ul>
+        <li *ngFor="let user of users"
+            [class.cur]="user === selecteduser"
+            (click)="getCurrentLi(user)">
+            <span>{{user.type}}</span><i class="icon-circle2"></i><i class="icon-check-circle2"></i></li>
+      </ul>
+    </div>
+    <!-- 联系人信息 -->
+    <div class="contact_information">
+      <h3>联系人信息</h3>
+      <ul>
+        <li><span>姓名</span><i>王强</i></li>
+        <li><span>手机</span><i>18602315486</i></li>
+        <li><span>证件号码</span><i>420010196512026358</i></li>
+      </ul>
+    </div>
+    <!-- 入住信息 -->
+    <div class="checkin_information">
+      <h3>入住信息</h3>
+      <ul>
+        <li (click)="getDBType()"><span>担保方式</span><i>{{curType}}</i></li>
+        <li><span>预抵时间</span><i>12:00</i></li>
+        <li><span>保留时间</span><i>12:00</i></li>
+      </ul>
+    </div>
+    <!-- 选房信息 -->
+    <div class="chooseroom_information">
+      <h3>选房信息</h3>
+      <ul>
+        <li (click)="setBeginTime()"><span>入住时间</span><i>{{bgtime}}</i></li>
+        <li (click)="setEndTime()"><span>离店时间</span><i>{{edtime}}</i></li>
+        <li><span>入住天数</span><i>{{livedays}}</i></li>
+        <li (click)="roomTypeSelect()"><span>房型</span><i>{{roomInfo}}</i></li>
+        <li (click)="roomSelect()"><span>房间管理</span><i>{{selectedRoom}}房</i></li>
+        <li><span>总金额</span><i>{{totalmoney}}.00</i></li>
+      </ul>
+    </div>
+    <button (click)="commitOrder()">提交订单</button>
+  </section>
+</div>
+<div class="db_type_select" [ngStyle]="{'display': selectModule}" (click)="hideSelect()">
+  <ul>
+    <li *ngFor="let thistype of dbtypes" (click)="selectType(thistype)">{{thistype.type}}</li>
+  </ul>
+</div>
+<div class="room_type_select" [ngStyle]="{'display': roomModule}">
+  <header>
+    <a href="javascript:void(0);" (click)="backReservation()">
+      <i class="icon-angle-left"></i>
+    </a>
+    <span>房型</span>
+  </header>
+  <section>
+    <div *ngFor="let room of rooms" class="room_panel">
+      <div [ngClass]="{'room_card':true, 'cur':room.curcheck}" (click)="selectThisRoom(room)">
+        <div>
+          <p><span>房型：</span><em>{{room.roomtype}}</em></p>
+          <p><span>可住数：</span><em>{{room.canlivefor}}</em></p>
+          <p><span>已定数：</span><em>{{room.hasorder}}</em></p>
+          <p><span>均价：</span><em>{{room.averageprice}}</em></p>
+          <p><span>可定数：</span><em>{{room.canorder}}</em></p>
+          <p><span>门市价：</span><em>{{room.rackrate}}</em></p>
+        </div>
+        <i class="icon-circle2"></i>
+        <i class="icon-check-circle2"></i>
+      </div>
+      <div class="room_count">
+        <p><label>数量：</label><em [ngClass]="{'cur':canMinus}" (click)="minusSelect(room)"><i class="icon-minus4"></i></em><span>{{room.roomselect}}</span><em [ngClass]="{'cur':canPlus}" (click)="plusSelect(room)"><i class="icon-plus4"></i></em></p>
+      </div>
+    </div>
+    <button (click)="commitRoomSelect()">提交</button>
+  </section>
+</div>
+<div class="date_manage" [ngStyle]="{'display': dateselect}">
+  <header>
+    <a href="javascript:void(0);" (click)="backReservation()">
+      <i class="icon-angle-left"></i>
+    </a>
+    <span>时间管理</span>
+  </header>
+  <section>
+    <div class="date_picker" [ngStyle]="{'display':modelShow1}">
+        <ngb-datepicker [(ngModel)]="model1" (select)="onDateSelection($event)"></ngb-datepicker>
+    </div>
+    <div class="date_picker" [ngStyle]="{'display':modelShow2}">
+        <ngb-datepicker [(ngModel)]="model2" (select)="onDateSelection($event)"></ngb-datepicker>
+    </div>
+    <button (click)="backReservation()">确定</button>
+  </section>
+</div>
+<div class="room_manage" [ngStyle]="{'display':roomShow}">
+  <header>
+    <a href="javascript:void(0);" (click)="backReservation()">
+      <i class="icon-angle-left"></i>
+    </a>
+    <span>房间管理</span>
+  </header>
+  <section>
+    <div class="room_tap">
+      <p *ngFor="let roomtype of roomtypes"
+      [ngClass]="{'cur':roomtype.iscurroom}"
+      (click)="toggleCurRoom(roomtype)"><i></i><span>{{roomtype.cleanliness}}</span></p>
+    </div>
+    <div class="room_holder">
+      <div *ngFor="let rooms of roomnumbers"
+           [ngClass]="{'room_wall':true,'cur':rooms.curshow}"
+           (click)="getCurRoomNum($event)">
+        <em *ngFor="let roomnum of rooms.roomNum">{{roomnum}}</em>
+      </div>
+      <button (click)="backReservation()">提交</button>
+    </div>
+  </section>
+</div>
+<div class="confirm_order" [ngStyle]="{'display':confRoom}">
+  <div class="room_order_panel">
+    <h3>核对订单信息</h3>
+    <div>
+      <p><span>联系信息：</span><em>王强</em></p>
+      <p><span>房型信息：</span><em>{{roomInfo}}</em></p>
+      <p><span>入住信息：</span><em>{{bgtime}}至{{edtime}} 入住{{livedays}}晚</em></p>
+      <p><span>房价信息：</span><em>{{confRoomType}} {{roomPerMoney}}.00/间</em></p>
+      <p><span>房价总计：</span><em>{{totalmoney}}.00</em></p>
+      <p><span>特殊要求：</span><em>无</em></p>
+      <p><span>保留时间：</span><em>{{bgtime}} 12:00</em></p>
+    </div>
+    <p><span (click)="gotoPreOrder()">保存订单</span><span (click)="backReservation()">返回</span></p>
+  </div>
+</div>
+<app-success *ngIf="showTips"></app-success>

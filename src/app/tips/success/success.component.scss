@@ -1,0 +1,29 @@
+.tips_alert_success{
+  position: fixed;
+  width: 58.933vw;
+  height: 58.933vw;
+  top:60vw;
+  left: 20.5335vw;
+  background-color: rgba(0,0,0,.5);
+  border-radius:2.5vw;
+  z-index: 99999;
+  text-align: center;
+  em{
+    display: block;
+    width: 17.6vw;
+    height: 17.6vw;
+    margin: 17.6vw auto 5.6vw;
+    border-radius: 50%;
+    background-color: #FFF;
+    i{
+      font-size: 14vw;
+      font-weight: bolder;
+      line-height: 17.6vw;
+      color: #666;
+    }
+  }
+  span{
+    font-size: 4.666vw;
+    color:#FFF;
+  }
+}

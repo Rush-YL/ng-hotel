@@ -1,0 +1,59 @@
+<div class="preorder">
+  <header>
+    <a href="javascript:void(0);" (click)="backWhereFrom()">
+      <i class="icon-angle-left"></i>
+    </a>
+    <span>预定详情</span>
+    <em (click)="backNewreservation(preorder)">编辑</em>
+  </header>
+  <section>
+    <p class="preorder_number"><span>预定号：</span><em>R20000110000150315</em></p>
+    <p class="preorder_hotel"><span>莱福特酒店</span><em>1708房</em></p>
+    <p class="preorder_date_detail">
+      <em><i class="icon-calendar3"></i></em>
+      <span class="date_range">{{preorder.livedetail}}</span>
+      <span class="nights">{{preorder.livedays}}晚</span>
+    </p>
+    <p class="normal_item"><span>预定号：</span>{{preorder.preordernum}}</p>
+    <p class="normal_item"><span>入住时间：</span>{{preorder.livedatetime}}</p>
+    <p class="normal_item"><span>姓名：</span>{{preorder.username}}</p>
+    <p class="normal_item"><span>电话：</span>{{preorder.userphone}}</p>
+    <p class="normal_item"><span>身份证号码：</span>{{preorder.idnumber}}</p>
+    <p class="normal_item"><span>入住人数：</span>{{preorder.livepersons}}</p>
+    <p class="normal_item"><span>房型：</span>{{preorder.roomtype}}</p>
+    <p class="normal_item"><span>入住天数：</span>{{preorder.longlive}}</p>
+    <p class="normal_item"><span>入住状态：</span><em class="hasl">{{preorder.livestatus}}</em></p>
+    <p class="normal_item"><span>支付状态：</span><em class="notp">{{preorder.paystatus}}</em></p>
+    <p class="total_money"><span>总金额：<sub>￥</sub><em>{{preorder.totalmoney}}</em></span></p>
+    <div class="user_actions">
+      <p class="auto_print"><i class="icon-check-circle2"></i><span>自动打印入住登记单</span></p>
+      <ul>
+        <li (click)="confirmCheckIn()">确认入住</li>
+        <li (click)="documentScanning()">证件扫描</li>
+        <li (click)="cancelOrder()">取消订单</li>
+      </ul>
+    </div>
+  </section>
+</div>
+<div class="order_print" *ngIf="showPrint">
+  <header>
+    <a href="javascript:void(0);" (click)="backPreorder()">
+      <i class="icon-angle-left"></i>
+    </a>
+    <span>打印入住登记单</span>
+  </header>
+  <section></section>
+</div>
+<div class="scaning_card" *ngIf="showScan">
+  <header>
+    <a href="javascript:void(0);" (click)="backPreorder()">
+      <i class="icon-angle-left"></i>
+    </a>
+    <span>证件扫描</span>
+  </header>
+  <section>
+    <div class="scan_div"></div>
+    <div class="scan_tips"></div>
+    <button class="scan_button" (click)="backPreorder()">确认</button>
+  </section>
+</div>
